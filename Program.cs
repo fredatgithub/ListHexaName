@@ -22,8 +22,8 @@ namespace ListHexaName
         }
       }
 
-      int numberOfSyllable = 3;
-      int numberOfWords = 10;
+      int numberOfSyllable = 8;
+      int numberOfWords = 1;
       for (int i = 0; i < numberOfWords; i++)
       {
         string oneWord = "";
@@ -36,6 +36,7 @@ namespace ListHexaName
         display($"{oneWord}");
       }
 
+      display("");
       display("Press any key to exit:");
       Console.ReadKey();
     }
