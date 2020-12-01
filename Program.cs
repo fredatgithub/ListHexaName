@@ -22,6 +22,10 @@ namespace ListHexaName
         }
       }
 
+      // BA BE CA CE DA DE FA FE
+      // 1  2  3  4  5  6  7  8
+      var listOfwords = new List<string>();
+      listOfwords = GetWords(syllabes, 4);
       int numberOfSyllable = 8;
       int numberOfWords = 1;
       for (int i = 0; i < numberOfWords; i++)
@@ -39,6 +43,46 @@ namespace ListHexaName
       display("");
       display("Press any key to exit:");
       Console.ReadKey();
+    }
+
+    private static List<string> GetWords(List<string> syllabes, int numberOfSyllables)
+    {
+      List<string> result = new List<string>();
+      string oneWord = string.Empty;
+      Random aleatoire = new Random();
+      int numberOfWords = 48;
+      switch (numberOfSyllables)
+      {
+        case 2:
+          numberOfWords = 48; // should be 64
+          break;
+        case 3:
+          numberOfWords = 342; // should be 512
+          break;
+        case 4:
+          numberOfWords = 342; // should be 4096
+          break;
+        default:
+          numberOfWords = 48;
+          break;
+      }
+      do
+      {
+        for (int i = 0; i < numberOfSyllables; i++)
+        {
+          oneWord += syllabes[aleatoire.Next(1, syllabes.Count)];
+        }
+
+        if (!result.Contains(oneWord))
+        {
+          result.Add(oneWord);
+        }
+
+        oneWord = string.Empty;
+      } while (result.Count <= numberOfWords);
+
+
+      return result;
     }
   }
 }
