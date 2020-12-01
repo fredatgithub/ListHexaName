@@ -84,5 +84,35 @@ namespace ListHexaName
 
       return result;
     }
+
+    private static void Swap(ref char a, ref char b)
+    {
+      if (a == b) return;
+
+      var temp = a;
+      a = b;
+      b = temp;
+    }
+
+    public static void GetPermission(char[] list)
+    {
+      int x = list.Length - 1;
+      GetPermission(list, 0, x);
+    }
+
+    private static void GetPermission(char[] list, int k, int m)
+    {
+      if (k == m)
+      {
+        Console.Write(list);
+      }
+      else
+        for (int i = k; i <= m; i++)
+        {
+          Swap(ref list[k], ref list[i]);
+          GetPermission(list, k + 1, m);
+          Swap(ref list[k], ref list[i]);
+        }
+    }
   }
 }
