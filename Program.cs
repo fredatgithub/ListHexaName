@@ -24,6 +24,8 @@ namespace ListHexaName
 
       // BA BE CA CE DA DE FA FE
       // 1  2  3  4  5  6  7  8
+      char[] hexaCharacters = new char[] { 'A', 'B', 'C', 'D', 'E', 'F' };
+      GetPermutations(hexaCharacters);
       var listOfwords = new List<string>();
       listOfwords = GetWords(syllabes, 4);
       int numberOfSyllable = 8;
@@ -94,23 +96,23 @@ namespace ListHexaName
       b = temp;
     }
 
-    public static void GetPermission(char[] list)
+    public static void GetPermutations(char[] list)
     {
       int x = list.Length - 1;
-      GetPermission(list, 0, x);
+      GetPermutations(list, 0, x);
     }
 
-    private static void GetPermission(char[] list, int k, int m)
+    private static void GetPermutations(char[] list, int k, int m)
     {
       if (k == m)
       {
-        Console.Write(list);
+        Console.WriteLine(list);
       }
       else
         for (int i = k; i <= m; i++)
         {
           Swap(ref list[k], ref list[i]);
-          GetPermission(list, k + 1, m);
+          GetPermutations(list, k + 1, m);
           Swap(ref list[k], ref list[i]);
         }
     }
