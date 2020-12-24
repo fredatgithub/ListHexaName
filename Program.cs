@@ -22,8 +22,8 @@ namespace ListHexaName
         }
       }
 
-      int numberOfSyllable = 3;
-      int numberOfWords = 20;
+      int numberOfSyllable = 5;
+      int numberOfWords = 30;
       Random rnd = new Random();
       for (int i = 0; i < numberOfWords; i++)
       {
