@@ -23,17 +23,25 @@ namespace ListHexaName
       }
 
       int numberOfSyllable = 3;
-      int numberOfWords = 10;
+      int numberOfWords = 20;
+      Random rnd = new Random();
       for (int i = 0; i < numberOfWords; i++)
       {
         string oneWord = "";
         for (int j = 0; j < numberOfSyllable; j++)
         {
-          oneWord += syllabes[j];
+          oneWord += syllabes[rnd.Next(0, syllabes.Count)];
         }
 
-        words.Add(oneWord);
-        display($"{oneWord}");
+        if (!words.Contains(oneWord))
+        {
+          words.Add(oneWord);
+        }
+      }
+
+      foreach (string word in words)
+      {
+        display($"{word}");
       }
 
       display("Press any key to exit:");
