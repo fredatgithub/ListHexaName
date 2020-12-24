@@ -29,7 +29,7 @@ namespace ListHexaName
       var listOfwords = new List<string>();
       listOfwords = GetWords(syllabes, 4);
       int numberOfSyllable = 8;
-      int numberOfWords = 1;
+      int numberOfWords = 10;
       for (int i = 0; i < numberOfWords; i++)
       {
         string oneWord = "";
