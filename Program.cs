@@ -28,8 +28,8 @@ namespace ListHexaName
       GetPermutations(hexaCharacters);
       var listOfwords = new List<string>();
       listOfwords = GetWords(syllabes, 4);
-      int numberOfSyllable = 8;
-      int numberOfWords = 1;
+      int numberOfSyllable = 5;
+      int numberOfWords = 10;
       Random rnd = new Random();
 
       for (int i = 0; i < numberOfWords; i++)
